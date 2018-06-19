@@ -1,6 +1,5 @@
 'use strict';
-let bookView = bookView || {};
-
+let bookView = {};
 
 function Book(bookObj) {
     Object.keys(bookObj).forEach(key => this[key] = bookObj [key]);
