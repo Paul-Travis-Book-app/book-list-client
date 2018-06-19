@@ -1,47 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Paul and Travis Book App</title>
+
+    <script id="book-list-template" type="text/x-handlebars-template">
+        <book class="clearfix" data-book="{{book}}" data-author="{{author}}">
+          <header>
+            <h1>{{title}}</h1>
+            <div>
+              By {{author}}
+            </div>
+          </header>
+          
+          <section class="description">{{{description}}}</section>
+        </book>
+      </script>
+
 </head>
+
 <body>
     <h1>Paul and Travis Book App</h1>
 
-    <section>
-        <ul>
-            <li>Book1</li>
-            <li>Book2</li>
-            <li>Book3</li>
-            <li>Book4</li>
-            <li>Book5</li>
-            <li>Book6</li>
-        </ul>
-        <ul>
-            <li>Author</li>
-            <li>Author</li>
-            <li>Author</li>
-            <li>Author</li>
-        </ul>
+    <section class="container">
     </section>
-    <section>
-        <h1>ABOUT</h1>
-        <ul>
-            <li>Shit about us</li>
-            <li>Shit about us</li>
-            <li>Shit about us</li>
-        </ul>
+
+    <section class="book-view" id="book-list">
     </section>
 
 
 
 
+    <!-- import jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+    <!-- import handlebars -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
 
+    <!-- link to our client side js file -->
+    <script src="index.js"></script>
 </body>
+
 </html>
