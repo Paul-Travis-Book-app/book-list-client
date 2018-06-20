@@ -30,7 +30,7 @@ Book.loadAll = rows => {
 }
 
 Book.fetchAll = callback => {
-    $.get('/api/v1/books')
+    $.get('http://localhost:3000/api/v1/books')
         .then(results => {
             Book.loadAll(results);
             callback();
@@ -40,7 +40,7 @@ Book.fetchAll = callback => {
 bookView.initIndexPage = () => {
     $('.container').hide();
     $('.book-view').show();
-    bookView.Book.all.forEach(a => $('#book-list').append(a.toHtml()));
+    Book.all.forEach(a => $('#book-list').append(a.toHtml()));
 }
 
 
