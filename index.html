@@ -10,18 +10,22 @@
     <script id="book-list-template" type="text/x-handlebars-template">
         <book class="clearfix" data-book="{{book}}" data-author="{{author}}">
           <header>
-            <h1>{{title}}</h1>
+            <h2>{{title}}</h2>
             <div>
               By {{author}}
             </div>
           </header>
           
-          <section class="description">{{{description}}}</section>
+          <article class="description">{{{description}}}</article>
         </book>
       </script>
 
-</head>
+      <link href="https://fonts.googleapis.com/css?family=Nixie+One" rel="stylesheet"> 
+      <link rel="stylesheet" href="reset.css" />
+      <link rel="stylesheet" href="style.css" />
 
+</head>
+<main>
 <body>
     <h1>Paul and Travis Book App</h1>
 
@@ -31,6 +35,7 @@
     <section class="book-view" id="book-list">
     </section>
 
+</main>
 
 
 

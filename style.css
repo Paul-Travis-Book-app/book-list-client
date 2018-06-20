@@ -1,0 +1,40 @@
+/* base */
+body {
+    line-height: 1.5;
+    color: gray;
+    margin: 0 auto;
+    width: 90%;
+
+}
+
+main {
+margin: 2rem 0px;
+background-color: lightgray;
+
+}
+
+
+
+
+/* modules */
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-family: 'Nixie One', cursive;
+}
+
+section {
+    margin: 2rem;
+    outline: 2px orange solid;
+}
+
+article {
+    margin: 2rem;
+    outline: 2px orange solid;
+}
+
+
+/* layout */
