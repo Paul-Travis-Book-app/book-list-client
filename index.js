@@ -14,6 +14,7 @@ Book.prototype.toHtml = function () {
 }
 
 Book.all = [];
+Book.limited = [];
 
 Book.loadAll = rows => {
     rows.sort(function (a, b) {
@@ -31,13 +32,29 @@ Book.loadAll = rows => {
     Book.all = rows.map((info) => new Book(info));
 }
 
+Book.loadLimited = rows => {
+    rows.sort(function (a, b) {
+
+        let authorA = a.title.toUpperCase();
+        let authorB = b.title.toUpperCase();
+        if (authorA < authorB) {
+            return -1;
+        } if (authorA > authorB) {
+            return 1;
+        }
+        return 0;
+    });
+
+    Book.limited = rows.map((info) => new Book(info));
+}
+
 Book.fetchAll = callback => {
     $.get('http://localhost:3000/api/v1/books')
         .then(results => {
             Book.loadAll(results);
             callback();
-        });
-}
+        })
+};
 
 bookView.initIndexPage = () => {
     $('.container').hide();
@@ -64,13 +81,9 @@ function errorCallback(errorObj) {
 }
 
 Book.fetchLimited = callback => {
-    $.get('http://localhost:3000/api/v1/books', (request, response) => {
-
-        let SQL = `
-        SELECT book_id, title, author, image_url FROM books;
-        `;
-        iDontFuckingKnow.query(SQL)
-            .then(results => response.send(results.rows))
-        callback();
-    });
-}
+    $.get('http://localhost:3000/api/v1/books-limited')
+        .then(results => {
+            Book.loadLimited(results);
+            callback();
+        })
+};
