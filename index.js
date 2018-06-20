@@ -15,6 +15,7 @@ Book.prototype.toHtml = function () {
 
 Book.all = [];
 Book.limited = [];
+Book.one = [];
 
 Book.loadAll = rows => {
     rows.sort(function (a, b) {
@@ -46,6 +47,22 @@ Book.loadLimited = rows => {
     });
 
     Book.limited = rows.map((info) => new Book(info));
+}
+
+Book.loadOne = rows => {
+    rows.sort(function (a, b) {
+
+        let authorA = a.title.toUpperCase();
+        let authorB = b.title.toUpperCase();
+        if (authorA < authorB) {
+            return -1;
+        } if (authorA > authorB) {
+            return 1;
+        }
+        return 0;
+    });
+
+    Book.one = rows.map((info) => new Book(info));
 }
 
 Book.fetchAll = callback => {
@@ -87,3 +104,33 @@ Book.fetchLimited = callback => {
             callback();
         })
 };
+
+Book.prototype.fetchOne = function (callback) {
+    console.log(this);
+    $.ajax({
+      url: `http://localhost:3000/api/v1/books:id`,
+      method: 'GET',
+      data: {
+        book_id: this.book_id
+      }
+    })
+      .then(console.log)
+      .then(callback);
+  };
+
+
+
+
+
+
+
+
+
+// Book.fetchOne = callback => {
+//     var id = 1;
+//     $.get('http://localhost:3000/api/v1/books:id')
+//         .then(results => {
+//             Book.loadOne(results);
+//             callback();
+//         })
+// };
