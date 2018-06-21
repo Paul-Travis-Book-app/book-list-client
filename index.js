@@ -108,35 +108,31 @@ let errorView = {}; // should be in errorView.js in the views folder
             })
     };
 
-    Book.prototype.fetchOne = function (callback) {
+    Book.prototype.postOne = function (callback) {
         console.log(this);
         $.ajax({
-            url: `http://localhost:3000/api/v1/books:id`,
-            method: 'GET',
+            url: `http://localhost:3000/api/v1/books`,
+            method: 'POST',
             data: {
-                book_id: this.book_id
+                book_id: this.book_id,
+                title: this.title,
+                author: this.author,
+                isbn: this.isbn,
+                image_url: this.image_url,
+                description: this.description
             }
         })
             .then(console.log)
             .then(callback);
     };
 
-
-
-
-
-
-
-
-
-    // Book.fetchOne = callback => {
-    //     var id = 1;
-    //     $.get('http://localhost:3000/api/v1/books:id')
-    //         .then(results => {
-    //             Book.loadOne(results);
-    //             callback();
-    //         })
-    // };
+    Book.fetchOne = callback => {
+        $.get('http://localhost:3000/api/v1/books:id')
+            .then(results => {
+                Book.loadOne(results);
+                callback();
+            })
+    };
 
 
 // })(app);
