@@ -6,3 +6,6 @@ bookView.initIndexPage = () => {
     $('.book-view').innerHTML = "";
     Book.one.forEach(a => $('#single-book').append(a.toHtml()));
 }
+
+
+//

@@ -6,3 +6,5 @@ homeView.initIndexPage = () => {
     $('.home-view').innerHTML = "";
     Book.all.forEach(a => $('#book-list').append(a.toHtml()));
 }
+
+//

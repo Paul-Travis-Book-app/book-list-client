@@ -85,3 +85,5 @@ Book.loadOne = rows => {
 
     Book.one = rows.map((info) => new Book(info));
 }
+
+//

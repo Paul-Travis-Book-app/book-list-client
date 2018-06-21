@@ -6,3 +6,6 @@ $(document).ready(function () {
     Book.fetchAll(homeView.initIndexPage);
 
 });
+
+
+//
