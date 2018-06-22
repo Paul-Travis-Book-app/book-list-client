@@ -11,18 +11,34 @@
         <book class="clearfix" data-book="{{book}}">
           <header>
             <h2>{{title}}</h2>
+            <isbn>{{isbn}}</isbn>
             <div>
               By {{author}}
             </div>
           </header>
-          
-          <article class="description">{{{description}}}</article>
+        <img src ={{image_url}} />
+        <article class="description">{{{description}}}</article>
         </book>
-      </script>
+    </script>
+
+    <!-- <script id="minimal-book-list-template" type="text/x-handlebars-template">
+        <book class="clearfix" data-book="{{book}}">
+          <header>
+            <h2>{{title}}</h2>
+            <div>
+              By {{author}}
+            </div>
+          </header>
+        </book>
+      </script> -->
+
+
 
     <link href="https://fonts.googleapis.com/css?family=Nixie+One" rel="stylesheet">
     <link rel="stylesheet" href="styles/reset.css" />
     <link rel="stylesheet" href="styles/style.css" />
+    
+
 
 </head>
 
@@ -35,15 +51,41 @@
 
     <main>
 
-        <!-- <section class="container">
-        </section> -->
 
         <section class="book-view" id="book-list">
         </section>
 
-        <section class="single-book-view" id="single-book">
+        <section class="single-book-view container" id="single-book">
         </section>
 
+        <section class="new-book-form container" id="newbookform">
+            <form>
+                <fieldset>
+                    <legend>Add a new book</legend>
+                    <label>Title:
+                        <input id="title" type="text">
+                    </label>
+                    <label>Author:
+                        <input id="author" type="text">
+                    </label>
+                    <label>ISBN:
+                        <input id="isbn" type="text">
+                    </label>
+                    <label>Image URL:
+                        <input id="image-url" type="text">
+                    </label>
+                    <label>Description:
+                        <input id="description" type="text">
+                    </label>
+                    <button id="thebutton">Submit a new book</button>
+                </fieldset>
+            </form>
+        </section>
+
+        <section class="error-view container" id="single-book">
+            <h2>Well Something sure as shit went wrong</h2>
+            <p>No idea what it is though.  We're not THAT sophisticated</p>
+        </section>
 
     </main>
 
