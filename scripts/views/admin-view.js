@@ -6,7 +6,7 @@ var adminView = {}
 
     (function (module) {
         
-    module.initAdminPage = () => {
+    module.initPage = () => {
         $('.container').hide();
         $('.admin-view').show();
         $('#newbookform').empty();

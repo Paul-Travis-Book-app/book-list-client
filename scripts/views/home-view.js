@@ -3,7 +3,7 @@
 var homeView = {};
 
 (function (module) {
-    module.initIndexPage = () => {
+    module.initPage = () => {
         $('.container').hide();
         $('.book-view').show();
         $('#home-view').empty();

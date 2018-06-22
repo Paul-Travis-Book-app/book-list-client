@@ -2,7 +2,7 @@
 
 let errorView = {};
 (function (module) {
-    module.initErrorPage = (err) => {
+    module.initPage = (err) => {
         $('.container').hide();
         $('.error-view').show();
         $('#error-message').empty();
