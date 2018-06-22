@@ -1,11 +1,9 @@
 'use strict';
 
 var app = app || {};
-
-$(document).ready(function () {
-    Book.fetchAll(homeView.initIndexPage);
-    homeView.initIndexPage()
-});
-
-
-//
+(function (module) {
+    $(document).ready(function () {
+        Book.fetchAll(homeView.initIndexPage);
+        homeView.initIndexPage()
+    });
+})(app)

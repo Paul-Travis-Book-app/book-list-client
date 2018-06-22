@@ -1,0 +1,49 @@
+body{
+    line-height: 1.5;
+    margin: 0 auto;
+}
+
+main {margin: 2rem 0px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+nav {
+    float: right;
+}
+
+nav ul {
+    display: none;
+    clear: both;
+  }
+
+isbn {
+    float: right;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+.icon-menu {
+    float: right;
+}
+
+@media only screen and (min-width: 700px) {
+
+    nav {
+        padding: .2em .2em .2em 2em;
+      }
+    
+    nav ul {
+        display: block;
+      }
+
+    nav ul li {
+        display: inline;
+        border-bottom: none;
+      }
+
+}

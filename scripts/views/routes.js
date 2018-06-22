@@ -1,3 +1,5 @@
+'use strict';
+
 Book.fetchAll = callback => {
     $.get('http://localhost:3000/api/v1/books')
         .then(results => {
