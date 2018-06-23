@@ -21,7 +21,7 @@
         </book>
     </script>
 
-    <!-- <script id="minimal-book-list-template" type="text/x-handlebars-template">
+    <script id="minimal-book-list-template" type="text/x-handlebars-template">
         <book class="clearfix" data-book="{{book}}">
           <header>
             <h2>{{title}}</h2>
@@ -30,7 +30,7 @@
             </div>
           </header>
         </book>
-      </script> -->
+      </script>
 
     <link rel="stylesheet" href="styles/reset.css" />
     <link href="https://fonts.googleapis.com/css?family=Nixie+One" rel="stylesheet">
@@ -48,14 +48,14 @@
         <nav>
                 <div class="icon-menu"></div>
                 <ul>
-                    <li class="tab" data-content="books">
-                        <a href="#" class="icon-home"> Home</a>
+                    <li class="tab" data-content="books" >
+                        <a href="#" class="icon-home" id="home"> Home</a>
                     </li>
                     <li class="tab" data-content="new-book">
-                        <a href="#" class="icon-address-book">Add a Book</a>
+                        <a href="#" class="icon-address-book" id="new_book">Add a Book</a>
                     </li>
-                    <li class="tab" data-content="admin">
-                            <a href="#" class="icon-address-book">Admin</a>
+                    <li class="tab" data-content="edit-book" id="edit_book">
+                            <a href="#" class="icon-address-book">Edit a Book</a>
                         </li>
                 </ul>
             </nav>
@@ -114,13 +114,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
 
     <!-- link to our client side js files -->
+    <script src="scripts/views/error-view.js"></script>
     <script src="scripts/models/book.js"></script>
-    <script src="scripts/index.js"></script>
+    
     <script src="scripts/views/routes.js"></script>
+    <script src="scripts/index.js"></script>
     <script src="scripts/views/admin-view.js"></script>
     <script src="scripts/views/book-view.js"></script>
     <script src="scripts/views/home-view.js"></script>
-    <script src="scripts/views/error-view.js"></script>
 </body>
 
 </html>

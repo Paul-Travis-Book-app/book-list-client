@@ -6,7 +6,7 @@ var homeView = {};
     module.initPage = () => {
         $('.container').hide();
         $('.book-view').show();
-        $('#home-view').empty();
+        $('.book-view').empty();
         Book.all.forEach(a => $('#book-list').append(a.toHtml()));
     }
 })(homeView)

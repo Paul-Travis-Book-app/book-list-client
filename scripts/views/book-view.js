@@ -11,8 +11,3 @@ let bookView = {};
     }
 
 })(bookView)
-
-
-
-
-

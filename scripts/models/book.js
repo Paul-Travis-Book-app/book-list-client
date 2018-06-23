@@ -47,7 +47,7 @@ Book.loadLimited = rows => {
 
 Book.loadOne = (info) => {
     Book.one[0] = new Book(info);
-    bookView.initIndexPage();
+    bookView.initPage();
     
 }
 
