@@ -15,27 +15,28 @@ Book.prototype.toHtml = function () {
 Book.loadAll = rows => { 
     rows.sort(function (a, b) {
 
-        let authorA = a.title.toUpperCase();
-        let authorB = b.title.toUpperCase();
-        if (authorA < authorB) {
+        let titleA = a.title.toUpperCase();
+        let titleB = b.title.toUpperCase();
+        if (titleA < titleB) {
             return -1;
-        } if (authorA > authorB) {
+        } if (titleA > titleB) {
             return 1;
         }
         return 0;
     });
 
     Book.all = rows.map((info) => new Book(info));
+    
 }
 
 
 Book.loadLimited = rows => {
     rows.sort(function (a, b) {
-        let authorA = a.title.toUpperCase();
-        let authorB = b.title.toUpperCase();
-        if (authorA < authorB) {
+        let titleA = a.title.toUpperCase();
+        let titleB = b.title.toUpperCase();
+        if (titleA < titleB) {
             return -1;
-        } if (authorA > authorB) {
+        } if (titleA > titleB) {
             return 1;
         }
         return 0;
@@ -46,6 +47,7 @@ Book.loadLimited = rows => {
 
 Book.loadOne = (info) => {
     Book.one[0] = new Book(info);
+    bookView.initPage();
     
 }
 

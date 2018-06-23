@@ -1,5 +1,7 @@
+'use strict';
+
 Book.fetchAll = callback => {
-    $.get('http://localhost:3000/api/v1/books')
+    $.get('http://localhost:4000/api/v1/books')
         .then(results => {
             Book.loadAll(results);
             callback();
@@ -8,7 +10,7 @@ Book.fetchAll = callback => {
 
 
 Book.fetchLimited = callback => {
-    $.get('http://localhost:3000/api/v1/books-limited')
+    $.get('http://localhost:4000/api/v1/books-limited')
         .then(results => {
             Book.loadLimited(results);
             callback();
@@ -17,7 +19,7 @@ Book.fetchLimited = callback => {
 
 Book.fetchOne = (id, callback) => {
     $.ajax({
-        url: `http://localhost:3000/api/v1/books/${id}`,
+        url: `http://localhost:4000/api/v1/books/${id}`,
         method: 'GET',
         data: {
             book_id: 1, 
@@ -31,7 +33,7 @@ Book.fetchOne = (id, callback) => {
 
 Book.deleteOne = (id, callback) => {
     $.ajax({
-        url: `http://localhost:3000/api/v1/books/${id}`,
+        url: `http://localhost:4000/api/v1/books/${id}`,
         method: 'DELETE',
         data: {
             book_id: 1, 
@@ -43,9 +45,29 @@ Book.deleteOne = (id, callback) => {
         })
 };
 
+
+
+
+// Book.postOne = (callback) => {
+//     console.log(this);
+//     $.post('http://localhost:4000/api/v1/books', {
+//         title: this.title,
+//         author: this.author,
+//         isbn: this.isbn,
+//         image_url: this.image_url,
+//         description: this.description
+//     })
+//     .then(results => {
+//         Book.loadLimited(results);
+//         callback();
+//     })
+// };
+
+
+
 Book.prototype.postOne = function (callback) {
     console.log(this);
-    $.post('http://localhost:3000/api/v1/books', {
+    $.post('http://localhost:4000/api/v1/books', {
         title: this.title,
         author: this.author,
         isbn: this.isbn,
@@ -57,8 +79,15 @@ Book.prototype.postOne = function (callback) {
         callback();
     })
 };
+
+
+
+
+
+
+
         
-//         url: `http://localhost:3000/api/v1/books`,
+//         url: `http://localhost:4000/api/v1/books`,
 //         method: 'POST',
 //         data: {
             
@@ -71,7 +100,7 @@ Book.prototype.postOne = function (callback) {
 Book.prototype.putOne = function (callback) {
     console.log(this);
     $.ajax({
-        url: `http://localhost:3000/api/v1/books/:id`,
+        url: `http://localhost:4000/api/v1/books/:id`,
         method: 'PUT',
         data: {
             book_id: this.book_id,
