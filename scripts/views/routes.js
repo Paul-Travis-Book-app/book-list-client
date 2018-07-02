@@ -1,7 +1,7 @@
 'use strict';
 
 Book.fetchAll = callback => {
-    $.get('http://localhost:4000/api/v1/books')
+    $.get('https://paul-travis-booklist.herokuapp.com//books')
         .then(results => {
             Book.loadAll(results);
             callback();
@@ -10,7 +10,7 @@ Book.fetchAll = callback => {
 
 
 Book.fetchLimited = callback => {
-    $.get('http://localhost:4000/api/v1/books-limited')
+    $.get('https://paul-travis-booklist.herokuapp.com//books-limited')
         .then(results => {
             Book.loadLimited(results);
             callback();
@@ -19,7 +19,7 @@ Book.fetchLimited = callback => {
 
 Book.fetchOne = (id, callback) => {
     $.ajax({
-        url: `http://localhost:4000/api/v1/books/${id}`,
+        url: `https://paul-travis-booklist.herokuapp.com//books/${id}`,
         method: 'GET',
         data: {
             book_id: 1, 
@@ -33,7 +33,7 @@ Book.fetchOne = (id, callback) => {
 
 Book.deleteOne = (id, callback) => {
     $.ajax({
-        url: `http://localhost:4000/api/v1/books/${id}`,
+        url: `https://paul-travis-booklist.herokuapp.com//books/${id}`,
         method: 'DELETE',
         data: {
             book_id: 1, 
@@ -50,7 +50,7 @@ Book.deleteOne = (id, callback) => {
 
 // Book.postOne = (callback) => {
 //     console.log(this);
-//     $.post('http://localhost:4000/api/v1/books', {
+//     $.post('https://paul-travis-booklist.herokuapp.com//books', {
 //         title: this.title,
 //         author: this.author,
 //         isbn: this.isbn,
@@ -67,7 +67,7 @@ Book.deleteOne = (id, callback) => {
 
 Book.prototype.postOne = function (callback) {
     console.log(this);
-    $.post('http://localhost:4000/api/v1/books', {
+    $.post('https://paul-travis-booklist.herokuapp.com//books', {
         title: this.title,
         author: this.author,
         isbn: this.isbn,
@@ -87,7 +87,7 @@ Book.prototype.postOne = function (callback) {
 
 
         
-//         url: `http://localhost:4000/api/v1/books`,
+//         url: `https://paul-travis-booklist.herokuapp.com//books`,
 //         method: 'POST',
 //         data: {
             
@@ -100,7 +100,7 @@ Book.prototype.postOne = function (callback) {
 Book.prototype.putOne = function (callback) {
     console.log(this);
     $.ajax({
-        url: `http://localhost:4000/api/v1/books/:id`,
+        url: `https://paul-travis-booklist.herokuapp.com//books/:id`,
         method: 'PUT',
         data: {
             book_id: this.book_id,
